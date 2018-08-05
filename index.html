@@ -3,18 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Vue</title>
-  <!-- <link rel="stylesheet" href="https://unpkg.com/semantic-ui/dist/semantic-ui.css"> -->
+  <link rel="stylesheet" href="https://unpkg.com/semantic-ui/dist/semantic.css">
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <style>
+    .ul.item.menu{
+      margin-top: 24px;
+    }
+
+    .ui.segament{
+      padding: 32px;
+    }
+
+  </style>
 </head>
 <body>
   <div id="app">
-    <!-- vue-router提供的router-link标签，设定to属性来指定对应的路径 -->
-    <router-link to="/">首页</router-link>
-    <router-link to="/events">首页</router-link>
-    <!-- 显示路由对应内容的的标签 -->
-    <router-view></router-view>
-
+    <div class="ui container">
+      <div class="ui two item menu">
+        <!-- vue-router提供的router-link标签，设定to属性来指定对应的路径 -->
+        <router-link active-class="active" exact class="item" to="/">首页</router-link>
+        <router-link class="item" to="/events">活动</router-link>
+        <!-- 显示路由对应内容的的标签 -->
+      </div>
+      <div class="ui piled segment"> <!-- piled为堆积的意思 -->
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
   <script src="./index.js" charset="utf-8"></script>
 </body>
